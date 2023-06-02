@@ -1,0 +1,334 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.master.cs" Inherits="FilmMS.Site1" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title>CineMatrix</title>
+    <%-- main css start --%>
+    <style>
+        .footerlinks {
+            color: #fff;
+            text-decoration: none !important;
+        }
+
+            .footerlinks:hover {
+                color: #ffd800;
+            }
+
+        .footer1 {
+            background: #D162A4;
+        }
+
+        .footer2 {
+            background: #A30262;
+        }
+
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+        .primary-clr {
+            background-color: #a30262;
+            color: white;
+        }
+
+            .primary-clr:hover {
+                background-color: #B55690;
+                color: white;
+            }
+
+        .secondary-clr {
+            background-color: #ff9a56;
+            color: white;
+        }
+
+        .accent-clr {
+            background-color: #d162a4;
+            color: white;
+        }
+
+        .fixed-bottom {
+            padding-bottom: 0 !important;
+        }
+    </style>
+    <%-- main css end --%>
+
+    <%-- bootstrap css start --%>
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <%-- bootstrap css end --%>
+
+    <%-- datatables css start --%>
+    <link href="datatables/css/jquery.dataTables.min.css" rel="stylesheet" />
+    <%-- datatables css end --%>
+
+    <%-- fontawesome css start --%>
+    <link href="fontawesome/css/all.css" rel="stylesheet" />
+    <%-- fontawesome css end --%>
+
+    <%-- jquery start --%>
+    <script src="bootstrap/js/jquery.min.js"></script>
+    <%-- jquery end --%>
+
+    <%-- popper js start --%>
+    <script src="bootstrap/js/popper.min.js"></script>
+    <%-- popper js end --%>
+
+    <%-- bootsrap js start --%>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <%-- bootstrap js end --%>
+
+    <%-- datatables start --%>
+    <script src="datatables/jss/jquery.dataTables.min.js"></script>
+    <%-- datatables end --%>
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+
+</head>
+<body>
+    <form id="form1" class="mt-5" runat="server">
+        <div>
+            <nav class="navbar fixed-top navbar-expand-lg " style="background-color: mediumvioletred;">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="homepage.aspx">
+                        <img src="images/imgs/title_cinematrix.png" width="50" height="30" />
+                    </a>
+                    <%-- button collpase start --%>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
+                        aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <%-- button collapse end --%>
+                    <div class="collapse navbar-collapse" id="navbarText">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item active">
+                                <a class="nav-link text-white" style="user-select: none; cursor: pointer;" data-bs-toggle="modal" data-bs-target="#abtUsModal">About Us</a>
+                            </li>
+                            <li class="nav-item active">
+                                <a class="nav-link text-white" style="user-select: none; cursor: pointer;" data-bs-toggle="modal" data-bs-target="#TermsModal">Terms</a>
+                            </li>
+                        </ul>
+
+                        <ul class="navbar-nav">
+
+                            <li class="nav-item active">
+                                <asp:LinkButton class="nav-link text-white" ID="SM_signup" runat="server" OnClick="SM_signup_Click">Sign Up</asp:LinkButton>
+                            </li>
+                            <li class="nav-item active">
+                                <asp:LinkButton class="nav-link text-white" ID="SM_logout" runat="server" Visible="False" OnClick="SM_logout_Click">Log out</asp:LinkButton>
+                            </li>
+
+                            <li class="nav-item active">
+                                <asp:LinkButton class="nav-link text-white" ID="SM_profile" runat="server" Visible="False" OnClick="SM_profile_Click">Hello user</asp:LinkButton>
+                            </li>
+
+                            <li class="nav-item active">
+                                <asp:LinkButton class="nav-link text-white" ID="SM_profileadmin" runat="server" Visible="False">Hello admin</asp:LinkButton>
+                            </li>
+
+                            <li class="dropstart">
+                                <button class="btn primary-clr dropdown-toggle" id="dropdown_login" type="button" runat="server" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Log in</button>
+                                <ul class="dropdown-menu">
+                                    <asp:LinkButton class="nav-link" ID="SM_memberlogin" runat="server" OnClick="SM_memberlogin_Click">Member Login</asp:LinkButton>
+                                    <asp:LinkButton class="nav-link" ID="SM_adminlogin1" runat="server" OnClick="SM_adminlogin1_Click">Admin Login</asp:LinkButton>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+
+        <%-- Modals start --%>
+        <div class="modal fade" id="abtUsModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg modal-dialog-scrollable">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">About us</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <h4>Welcome to Cinematrix, the ideal system for managing your film inventory.</h4>
+
+                        <p>
+                            At Cinematrix, we are aware of the difficulties and complications involved in overseeing a film inventory. Our complete platform is made to simplify your film inventory management process, saving you time, energy, and resources, whether you're a production firm, a rental business, or a movie aficionado.
+                        </p>
+
+                        <p>
+                            You have complete control over your film assets using Cinematrix. You can easily manage, track, and organize your film collection using our user-friendly and intuitive interface, giving you a constant, clear picture of your collection. Cinematrix makes everything simpler, so there's no need to go through mountains of DVDs or countless spreadsheets.
+                        </p>
+
+                        <p>
+                            <b>Key features of the Cinematrix:</b>
+                        </p>
+
+                        <p>
+                            • <b>Centralized Film Database</b>: Our platform offers a single location where all pertinent film data may be stored and accessed. You may edit current entries, add new films, and keep an exhaustive database of your inventory with only a few clicks.
+                        </p>
+
+                        <p>
+                            • <b>Streamlined Rental Management</b>: Cinematrix has you covered if you're in the rental business. Our system has functions designed especially for rental businesses, like reservation management, reminders for due dates. Let Cinematrix take care of everything instead of continuing to track rentals manually.
+                        </p>
+
+                        <p>
+                            • <b>Comprehensive Film Information</b>: Cinematrix enables you to save and access all pertinent film data in one location. Our platform enables you to keep an in-depth profile for each movie in your inventory, including information on the cast, crew, release dates, and genres.
+                        </p>
+
+                        <p>
+                            • <b>Advanced Search and Filtering</b>: Are you looking for a specific movie or are you trying to narrow down your selection using a set of criteria? You may find movies quickly using Cinematrix's robust search and filtering capabilities based on different criteria like genre, director, or year of release.
+                        </p>
+
+                        <p>
+                            • <b>Security and user permissions</b> are adjustable, and Cinematrix places a high priority on data security. Your team members can be given access at various levels, helping to protect sensitive data and limit access to just those who are permitted.
+                        </p>
+
+                        <p>
+                            We at Cinematrix are dedicated to giving customers a seamless experience with film inventory management. We want to make it easier for you to manage your movies so you can concentrate on what's important: making, sharing, and watching great movies.
+                        </p>
+
+                        <p>
+                            Discover the potential of effective film inventory management by signing up for Cinematrix today. Discover a new level of control, efficiency, and organization over your movie library. Here is where your path to hassle-free film management begins.
+                        </p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn primary-clr" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="TermsModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg modal-dialog-scrollable">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel2">Terms and conditions of use</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <h4>Terms and Conditions of Use - Cinematrix</h4>
+
+                        <h6><i>Effective Date: June 2, 2023</i></h6>
+
+                        <p>
+                            These Terms and Conditions of Use ("Terms") govern your access to and use of the Cinematrix website ("Website"), a Film Inventory Management system provided by <a href="https://behance.net/leinaharts" target="_blank">leinaharts</a> ("we," "us," or "our"). By accessing or using the Website, you agree to be bound by these Terms. If you do not agree to these Terms, please refrain from using the Website.
+                        </p>
+
+                        <p>
+                            • <b>Acceptance of Terms</b>: By accessing or using the Website, you affirm that you are at least 18 years of age or have the legal capacity to enter into this agreement. If you are accessing or using the Website on behalf of a company or organization, you represent and warrant that you have the authority to bind such entity to these Terms.
+                        </p>
+
+                        <p>
+                            • <b>License</b>: Subject to these Terms, we grant you a limited, non-exclusive, non-transferable, and revocable license to access and use the Website for the purpose of managing your film inventory, in accordance with applicable laws and regulations.                       
+                        </p>
+
+                        <p>
+                            • <b>User Accounts</b>: In order to access certain features of the Website, you may be required to create a user account. You are responsible for maintaining the confidentiality of your account credentials and for any activity that occurs under your account. You agree to promptly notify us of any unauthorized access to or use of your account.                       
+                        </p>
+
+                        <p>
+                            • <b>Prohibited Conduct</b>: When using the Website, you agree not to:     
+                            <p><b>1.</b> Violate any applicable laws, regulations, or third-party rights.</p>
+                            <p><b>2.</b> Upload, post, transmit, or distribute any content that is unlawful, harmful, defamatory, obscene, or otherwise objectionable.</p>
+                            <p><b>3.</b> Use the Website to engage in any form of fraudulent activity or impersonate any person or entity.</p>
+                            <p><b>4.</b> Interfere with or disrupt the functionality of the Website or any servers or networks connected to the Website.</p>
+                            <p><b>5.</b> Use any automated means or scripts to access or collect information from the Website without our prior written consent.</p>
+                            <p><b>6.</b> Attempt to gain unauthorized access to any portion of the Website or any other systems or networks connected to the Website.</p>
+                            <br />
+                        </p>
+
+                        <p>
+                            • <b>Intellectual Property</b> The Website and its contents, including but not limited to text, graphics, logos, and software, are owned by or licensed to us and are protected by Philippine and international intellectual property laws. You may not reproduce, modify, distribute, or create derivative works based upon any part of the Website without our prior written consent.                       
+                        </p>
+
+                        <p>
+                            • <b>Limitation of Liability</b> To the extent permitted by Philippine law, we shall not be liable for any indirect, incidental, special, consequential, or punitive damages arising out of or in connection with your use of the Website, including but not limited to loss of profits, data, or business opportunities.                       
+                        </p>
+
+                        <p>
+                            • <b>Indemnification</b> You agree to indemnify, defend, and hold us harmless from any claims, damages, losses, liabilities, and expenses (including legal fees) arising out of or in connection with your use of the Website, your violation of these Terms, or your violation of any rights of another party.                       
+                        </p>
+
+                        <p>
+                            • <b>Modifications to the Terms</b> We reserve the right to modify or update these Terms at any time without prior notice. The updated Terms will be effective as of the date of posting on the Website. Your continued use of the Website after any modifications to the Terms signifies your acceptance of the updated Terms.                       
+                        </p>
+
+                        <p>
+                            • <b>Termination</b> We may terminate or suspend your access to the Website at any time, with or without cause and without prior notice.                       
+                        </p>
+
+                        <p>
+                            • <b>Governing Law and Jurisdiction</b> These Terms shall be governed by and construed in accordance with the laws of the Philippines. Any disputes arising out of or relating to these Terms shall be subject to the exclusive jurisdiction of the courts of the Philippines.                       
+                        </p>
+
+                        <p>
+                            • <b>Severability</b> If any provision of these Terms is found to be invalid, illegal, or unenforceable, the remaining provisions shall continue in full force and effect.                       
+                        </p>
+
+                        <p>
+                            • <b>Entire Agreement</b> These Terms constitute the entire agreement between you and us regarding your use of the Website and supersede any prior or contemporaneous agreements, communications, or understandings, whether oral or written.                       
+                        </p>
+
+                        <p>
+                            If you have any questions or concerns about these Terms, please contact us at <a href="https://https://www.facebook.com/nthfyz/">Facebook</a>.
+                        </p>
+
+                        <p>
+                            By using Cinematrix, you acknowledge that you have read, understood, and agree to be bound by these Terms and Conditions of Use.                       
+                        </p>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn primary-clr" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <%-- Modals end --%>
+
+
+        <!-- Main Content Placeholder -->
+        <div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+        <!-- Main Content Placeholder -->
+
+        <!-- Footer -->
+        <footer>
+            <nav class="navbar fixed-bottom">
+                <div class="container-fluid footer1">
+                    <%--<div class="row">--%>
+
+                    <div class="col-xs-12 col-sm-12 col-md-12 text-center">
+                        <p style="user-select: none;">
+                            <asp:LinkButton class="footerlinks" ID="SM_admnlogin" runat="server" OnClick="SM_admnlogin_Click">Admin Login</asp:LinkButton>
+                            &nbsp;
+                            <asp:LinkButton class="footerlinks" ID="SM_dirmgmt" runat="server" Visible="False" OnClick="SM_dirmgmt_Click">Director Management</asp:LinkButton>
+                            &nbsp;
+                            <asp:LinkButton class="footerlinks" ID="SM_prodcommgmt" runat="server" Visible="False" OnClick="SM_prodcommgmt_Click">Production Company Management</asp:LinkButton>
+                            &nbsp;
+                            <asp:LinkButton class="footerlinks" ID="SM_bookinvt" runat="server" Visible="False" OnClick="SM_bookinvt_Click">Film Inventory</asp:LinkButton>
+                            &nbsp;
+                            <asp:LinkButton class="footerlinks" ID="SM_bookissuing" runat="server" Visible="False" OnClick="SM_bookissuing_Click">Film Issuing</asp:LinkButton>
+                            &nbsp;
+                             <asp:LinkButton class="footerlinks" ID="SM_membermgmt" runat="server" Visible="False" OnClick="SM_membermgmt_Click">Member Management</asp:LinkButton>
+                        </p>
+                    </div>
+
+                    <%--</div>--%>
+                </div>
+                <div class="container-fluid footer2">
+                    <div class="col-xs-12 col-sm-12 col-md-12 text-center">
+                        <p style="color: whitesmoke; user-select: none;">&copy All right Reversed. <a class="footerlinks" href="#" target="_blank">Cinematrix</a></p>
+                    </div>
+                </div>
+            </nav>
+        </footer>
+        <!-- ./Footer -->
+    </form>
+</body>
+</html>
