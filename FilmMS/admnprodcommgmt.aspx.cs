@@ -38,7 +38,11 @@ namespace FilmMS
         //add btn start
         protected void prodcom_add_Click(object sender, EventArgs e)
         {
-            if (checkIfProdComNameExists())
+            if (prodcom_nametbx.Text == string.Empty || prodcom_nametbx.Text == "")
+            {
+                Response.Write("<script>alert('Production Company name field shouldn't be empty!');</script>");
+            }
+            else if (checkIfProdComNameExists())
             {
                 Response.Write("<script>alert('Production Company with this name already exists!');</script>");
             }

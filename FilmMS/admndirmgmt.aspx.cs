@@ -38,7 +38,11 @@ namespace FilmMS
         //add btn click start
         protected void admndir_add_Click(object sender, EventArgs e)
         {
-            if (checkIfDirectorNameExists())
+            if (admndir_dirnametbx.Text == string.Empty || admndir_dirnametbx.Text == "")
+            {
+                Response.Write("<script>alert('Director Name field shouldn't be empty!');</script>");
+            }
+            else if (checkIfDirectorNameExists())
             {
                 Response.Write("<script>alert('Director with this name already exists!');</script>");
             }

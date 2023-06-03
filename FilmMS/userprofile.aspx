@@ -92,14 +92,14 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group form-floating">
-                                    <asp:TextBox CssClass="form-control" ID="uprofile_fnametbx" placeholder="un" runat="server"></asp:TextBox>
+                                    <asp:TextBox CssClass="form-control" ID="uprofile_fnametbx" required="required" placeholder="un" runat="server"></asp:TextBox>
                                     <label for="memfnametbx">Full Name</label>
                                 </div>
                             </div>
 
                             <div class="col-md-6">
                                 <div class="form-group form-floating">
-                                    <asp:TextBox CssClass="form-control" ID="uprofile_dobtbx" placeholder="pw" runat="server" TextMode="Date"></asp:TextBox>
+                                    <asp:TextBox CssClass="form-control" ID="uprofile_dobtbx" required="required" placeholder="pw" runat="server" TextMode="Date"></asp:TextBox>
                                     <label for="memdobtbx">Date of Birth</label>
                                 </div>
                             </div>
@@ -108,14 +108,14 @@
                         <div class="row mt-3">
                             <div class="col-md-6">
                                 <div class="form-group form-floating">
-                                    <asp:TextBox CssClass="form-control" ID="uprofile_ctnumtbx" placeholder="pw" runat="server" TextMode="Number"></asp:TextBox>
+                                    <asp:TextBox CssClass="form-control" ID="uprofile_ctnumtbx" required="required" placeholder="pw" runat="server" TextMode="Number"></asp:TextBox>
                                     <label for="memctnumtbx">Contact Number</label>
                                 </div>
                             </div>
 
                             <div class="col-md-6">
                                 <div class="form-group form-floating">
-                                    <asp:TextBox CssClass="form-control" ID="uprofile_emailtbx" placeholder="pw" runat="server" TextMode="Email"></asp:TextBox>
+                                    <asp:TextBox CssClass="form-control" ID="uprofile_emailtbx" required="required" placeholder="pw" runat="server" TextMode="Email"></asp:TextBox>
                                     <label for="mememailtbx">Email Address</label>
                                 </div>
                             </div>
@@ -125,21 +125,21 @@
 
                             <div class="col-md-4">
                                 <div class="form-group form-floating">
-                                    <asp:TextBox CssClass="form-control" ID="uprofile_region" placeholder="dob" runat="server"></asp:TextBox>
+                                    <asp:TextBox CssClass="form-control" ID="uprofile_region" required="required" placeholder="dob" runat="server"></asp:TextBox>
                                     <label for="memnametbx">Region</label>
                                 </div>
                             </div>
 
                             <div class="col-md-4">
                                 <div class="form-group form-floating">
-                                    <asp:TextBox CssClass="form-control" ID="uprofile_province" placeholder="Member ID" runat="server"></asp:TextBox>
+                                    <asp:TextBox CssClass="form-control" ID="uprofile_province" required="required" placeholder="Member ID" runat="server"></asp:TextBox>
                                     <label for="memnametbx">Province</label>
                                 </div>
                             </div>
 
                             <div class="col-md-4">
                                 <div class="form-group form-floating">
-                                    <asp:TextBox CssClass="form-control" ID="uprofile_cities" placeholder="email ad" runat="server"></asp:TextBox>
+                                    <asp:TextBox CssClass="form-control" ID="uprofile_cities" required="required" placeholder="email ad" runat="server"></asp:TextBox>
                                     <label for="booknametbx">Cities/Muncipalities</label>
                                 </div>
                             </div>
@@ -148,7 +148,7 @@
                         <div class="row mt-4">
                             <div class="col-md-12">
                                 <div class="form-group form-floating">
-                                    <asp:TextBox CssClass="form-control" ID="uprofile_fulladdr" placeholder="fulladdr" runat="server"></asp:TextBox>
+                                    <asp:TextBox CssClass="form-control" ID="uprofile_fulladdr" required="required" placeholder="fulladdr" runat="server"></asp:TextBox>
                                     <label for="memctnumtbx">Full Address</label>
                                 </div>
                             </div>
@@ -165,7 +165,7 @@
                         <div class="row mt-3">
                             <div class="col-md-6">
                                 <div class="form-group form-floating">
-                                    <asp:TextBox CssClass="form-control" ID="uprofile_unametbx" placeholder="pw" runat="server" ReadOnly="True"></asp:TextBox>
+                                    <asp:TextBox CssClass="form-control" ID="uprofile_unametbx" required="required" placeholder="pw" runat="server" ReadOnly="True"></asp:TextBox>
                                     <label for="unametbx">Username</label>
                                 </div>
                             </div>
@@ -173,7 +173,7 @@
 
                             <div class="col-md-6">
                                 <div class="form-group form-floating">
-                                    <asp:TextBox CssClass="form-control" ID="uprofile_passtbx" placeholder="pw" runat="server"></asp:TextBox>
+                                    <asp:TextBox CssClass="form-control" ID="uprofile_passtbx" required="required" placeholder="pw" runat="server"></asp:TextBox>
                                     <%-- TextMode="Password" --%>
                                     <label for="passtbx">Password</label>
                                 </div>

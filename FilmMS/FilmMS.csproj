@@ -2177,6 +2177,7 @@
     <Content Include="images\imgs\title_cinematrix.png" />
     <Content Include="images\imgs\writer.png" />
     <Content Include="bootstrap\js\jquery.ph-locations-v1.0.0.js" />
+    <Content Include="sql server database\database_map.jpg" />
     <Content Include="userprofile.aspx" />
     <Content Include="usersignup.aspx" />
     <Content Include="timestamp.txt" />
@@ -2329,6 +2330,7 @@
     <Content Include="Site1.Master" />
     <Content Include="sql server database\efilmlibDB.bak" />
     <Content Include="sql server database\efilmlibdb.bacpac" />
+    <Content Include="sql server database\database_map.psd" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

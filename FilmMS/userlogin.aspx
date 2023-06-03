@@ -69,12 +69,12 @@
                         <div class="row">
                             <div class="col">
                                 <div class="form-group form-floating">
-                                    <asp:TextBox CssClass="form-control" ID="usrlg_memidtbx" placeholder="un" runat="server"></asp:TextBox>
+                                    <asp:TextBox CssClass="form-control" ID="usrlg_memidtbx" required="required" placeholder="un" runat="server"></asp:TextBox>
                                     <label for="usrlg_memidtbx">Username</label>
                                 </div>
 
                                 <div class="form-group form-floating mt-4">
-                                    <asp:TextBox CssClass="form-control" ID="usrlg_mempwtbx" placeholder="pw" runat="server" TextMode="Password"></asp:TextBox>
+                                    <asp:TextBox CssClass="form-control" ID="usrlg_mempwtbx" required="required" placeholder="pw" runat="server" TextMode="Password"></asp:TextBox>
                                     <label for="usrlg_mempwtbx">Password</label>
                                 </div>
 

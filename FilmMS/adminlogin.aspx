@@ -62,12 +62,12 @@
                                 </div>
 
                                 <div class="form-group form-floating mt-4">
-                                    <asp:TextBox CssClass="form-control" ID="admnlg_admnpwtbx" placeholder="pw" runat="server" TextMode="Password"></asp:TextBox>
+                                    <asp:TextBox CssClass="form-control" ID="admnlg_admnpwtbx" placeholder="pw" required="required" runat="server" TextMode="Password"></asp:TextBox>
                                     <label for="admnlg_admnpwtbx">Admin Password</label>
                                 </div>
 
                                 <div class="form-group mt-4 d-grid">
-                                    <asp:Button class="btn primary-clr" ID="admnlg_loginbtn" runat="server" Text="Log in" OnClick="admnlg_loginbtn_Click" />
+                                    <asp:Button class="btn primary-clr" ID="admnlg_loginbtn" runat="server" required="required" Text="Log in" OnClick="admnlg_loginbtn_Click" />
                                 </div>
 
                             </div>
