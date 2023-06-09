@@ -2,6 +2,7 @@
  Film Library Management System for ITEC 60 | Integrated Programming and Technologies 1
  
 # Database Table Structure
+Create this database & tables on SQL Server
 ![database_map](https://github.com/LeinahI/CineMatrix/assets/53577436/5174c494-777d-4120-b329-156c43e51f48)
 
 # Modify Server Database at Web.config
